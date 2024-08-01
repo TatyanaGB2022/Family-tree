@@ -1,6 +1,9 @@
 package family_tree;
 
+import family_tree.family_tree.FamilyTree;
 import family_tree.writer.FileHandler;
+import human.Gender;
+import human.Human;
 
 import java.time.LocalDate;
 
@@ -17,14 +20,12 @@ public class Main {
     }
 
     private static FamilyTree load(){
-        FileHandler fileHandler = new FileHandler();
-        fileHandler.setPath(filePath);
+        FileHandler fileHandler = new FileHandler(filePath);
         return (FamilyTree) fileHandler.read();
     }
 
     private static void save(FamilyTree familyTree) {
-        FileHandler fileHandler = new FileHandler();
-        fileHandler.setPath(filePath);
+        FileHandler fileHandler = new FileHandler(filePath);
         fileHandler.save(familyTree);
     }
 

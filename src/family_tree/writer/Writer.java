@@ -6,6 +6,4 @@ public interface Writer {
     boolean save(Serializable serializable);
 
     Object read();
-
-    void setPath(String filePath);
 }
