@@ -1,12 +1,14 @@
 package human;
 
+import family_tree.family_tree.TreeNode;
+
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Human implements Serializable {
+public class Human implements TreeNode<Human> {
     private long id;
     private String name;
     private Gender gender;
@@ -30,6 +32,7 @@ public class Human implements Serializable {
     }
 
     public Human(String name, Gender gender, LocalDate birthDate) {
+
         this(name, gender, birthDate, null, null, null);
     }
 
@@ -79,7 +82,7 @@ public class Human implements Serializable {
         return father;
     }
 
-    public List<Human> getParetns() {
+    public List<Human> getParents() {
         List<Human> list = new ArrayList<>(2);
         if (father != null) {
             list.add(father);
@@ -195,8 +198,8 @@ public class Human implements Serializable {
     }
 
     public String getFatherInfo() {
-        String res = "мать: ";
-        Human father = getMother();
+        String res = "отец: ";
+        Human father = getFather();
         if (father != null) {
             res += father.getName();
         } else {

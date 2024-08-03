@@ -11,9 +11,9 @@ public class Main {
     final static String filePath = "src/family_tree/writer/tree.txt";
     public static void main(String[] args) {
 
-        FamilyTree tree = load();
-//        FamilyTree tree = testTree();
-//        save(tree);
+//        FamilyTree tree = load();
+        FamilyTree tree = testTree();
+        save(tree);
 
 
         System.out.println(tree);
